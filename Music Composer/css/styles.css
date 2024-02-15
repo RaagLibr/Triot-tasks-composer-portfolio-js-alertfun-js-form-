@@ -6,6 +6,12 @@ html,body
     padding: 0;
     width: 100%;
 }
+html a 
+{
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
 
 nav 
 {
@@ -365,7 +371,7 @@ background: linear-gradient(90deg, rgba(139,3,31,0.9612219887955182) 12%, rgba(8
   
       main section.section3 div.bg2 div
       {
-        margin: .5em;
+        margin: .9em;
         padding: .2em;
       
       }
@@ -407,11 +413,9 @@ background: linear-gradient(90deg, rgba(139,3,31,0.9612219887955182) 12%, rgba(8
   box-align: ;
   justify-content: space-evenly; /* Align items horizontally at the center */
   
-  margin: 0rem 20rem;
+  margin: 0rem 10rem;
 
- 
-
-  border: 2px red solid;
+ margin-bottom: 5rem;
 
 
   position: relative;
@@ -424,16 +428,14 @@ background: linear-gradient(90deg, rgba(139,3,31,0.9612219887955182) 12%, rgba(8
   background-size: cover;
   background-position: center;
  
-  height: 10rem;
-  width: 10rem;
+  height: 13rem;
+  width: 15rem;
 
-  border: 2px red solid;
 
 }
 
 .section4 div
 {
-  border: 2px red solid;
 
   
 }
@@ -462,7 +464,7 @@ background-image: url('../images/sec3.jpg');
   /*-------------------------------------section 5-------------------------------------------------------------*/
     section
     {
-      margin: 1em 0;
+      margin: 2em 0;
     }
 
     main .section5
