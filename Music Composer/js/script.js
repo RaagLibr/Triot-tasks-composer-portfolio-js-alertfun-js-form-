@@ -1,50 +1,77 @@
-	function myFunction() {
-	// body...
-	alert("Hello, please fill the form below.");
+const links = document.querySelectorAll(".nav-list li a");
+
+for (link of links) {
+  link.addEventListener("click", smoothScroll);
 }
 
-function validationForm(event)
-{
-	event.preventDefault();   //prevent the form from submitting 
-
-
-
-	var nameInput = document.getElementById('name');
-	var emailInput = document.getElementById('email');
-
-	//simple validation 
-	if(nameInput.value.trim()==='')
-	{
-		alert('please enter your name.');
-		nameInput.focus();
-		
-	}
-
-	if(!isValidEmail(emailInput.value.trim()))
-	{
-		alert('please enter a valid email address.');
-		emailInput.focus();
-		
-	}
-
-
-
-		//if validation passes , you can proceed with form submission or further processing 
-		alert('form submitted successfully !');
-
+function smoothScroll(e) {
+  e.preventDefault();
+  const href = this.getAttribute("href");
+  document.querySelector(href).scrollIntoView({
+    behavior: "smooth",
+  });
+  hideMenu();
 }
 
-function isValidEmail(email)
-{
-	//basic email validation using the regular expression
-	var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	return emailRegex.test(email);
+// RESPONSIVE MOBILE MENU
+const menu = document.querySelector(".nav-list");
+const hamburger = document.querySelector(".hamburger");
+const close = document.querySelector(".close");
+
+const showMenu = () => {
+  hamburger.style.display = "none";
+  close.style.transform = "translateY(0)";
+  menu.style.transform = "translateY(0)";
+};
+
+const hideMenu = () => {
+  close.style.transform = "translateY(-40rem)";
+  hamburger.style.display = "block";
+  
+  menu.style.transform = "translateY(-200%)";
+};
+
+hamburger.addEventListener("click", showMenu);
+close.addEventListener("click", hideMenu);
+
+
+
+
+
+
+
+
+  function validateForm() {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var nameError = document.getElementById("nameError");
+  var emailError = document.getElementById("emailError");
+  var isValid = true;
+
+  nameError.textContent = "";
+  emailError.textContent = "";
+
+  if (name === "") {
+    nameError.textContent = "Name is required";
+    isValid = false;
+  }
+
+  if (email === "") {
+    emailError.textContent = "Email is required";
+    isValid = false;
+  } else if (!isValidEmail(email)) {
+    emailError.textContent = "Invalid email address";
+    isValid = false;
+  }
+
+  return isValid;
 }
 
 
+function isValidEmail(email) {
+  alert("form submitted.");
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
 
-
-
-
-
+}
 
