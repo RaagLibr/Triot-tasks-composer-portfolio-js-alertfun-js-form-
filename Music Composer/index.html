@@ -257,20 +257,25 @@
 
 
     <section class="section6" id="cn" style="">
-        
+           <form id="myForm" onsubmit="return validateForm()">
           <div class="cl1" >
             
-               <h1>LEAVE A MASSAGE</h1>
+              <h1>LEAVE A MASSAGE</h1>
               <label for="name"></label>
-              <input type="text" name="nm" id="name"  placeholder="name" required><br>
+              <input type="text" name="name" id="name"  placeholder="name" required><br>
               <label for="email"></label>
               <input type="text" name="email" id="email" placeholder="email ID" required><br>
               <input type="text" name="sub" placeholder="subject"><br>
               <textarea name="msg" placeholder="message" rows="6" align="center"></textarea>
-              <input class="button" style="width: 40%; float: right; color: white;" type="button" value="Hire Me !" onclick="">
+              <input class="button" type="submit" style="width: 40%; float: right; color: white;"  value="Hire Me !">
+
+              <span id="emailError" class="error"></span><br>
+  
+  
 
           </div>  
-            <div class="cl2">
+        </form>
+         <div class="cl2">
               <div class="addr">
                 <h2>ADDRESS</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
