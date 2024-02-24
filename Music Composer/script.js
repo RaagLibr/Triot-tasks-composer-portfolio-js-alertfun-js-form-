@@ -33,3 +33,45 @@ const hideMenu = () => {
 
 hamburger.addEventListener("click", showMenu);
 close.addEventListener("click", hideMenu);
+
+
+
+
+
+
+
+
+  function validateForm() {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var nameError = document.getElementById("nameError");
+  var emailError = document.getElementById("emailError");
+  var isValid = true;
+
+  nameError.textContent = "";
+  emailError.textContent = "";
+
+  if (name === "") {
+    nameError.textContent = "Name is required";
+    isValid = false;
+  }
+
+  if (email === "") {
+    emailError.textContent = "Email is required";
+    isValid = false;
+  } else if (!isValidEmail(email)) {
+    emailError.textContent = "Invalid email address";
+    isValid = false;
+  }
+
+  return isValid;
+}
+
+
+function isValidEmail(email) {
+  alert("form submitted.");
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+
+}
+
